@@ -102,7 +102,7 @@ def synthesizer_with_style(chatmessage, speech_synthesizer, styledegree, voice, 
         voice = "en-US-DavisNeural"
 
     text = (
-        f'<speak xmlns="http://www.w3.org/2001/10/synthesis" xmlns:mstts="http://www.w3.org/2001/mstts"'
+        f'<speak xmlns="http://www.w3.org/2001/10/synthesis" xmlns:mstts="http://www.w3.org/2001/mstts" '
         f'xmlns:emo="http://www.w3.org/2009/10/emotionml" version="1.0" xml:lang="en-US">'
         f'<voice name="{voice}"><s/><mstts:express-as style="{styleinput}"'
     )
