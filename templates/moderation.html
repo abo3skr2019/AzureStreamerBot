@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Moderation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Moderation</h1>
+    </header>
+    <div class="flash-messages">
+      {% with messages = get_flashed_messages() %}
+          {% if messages %}
+              {% for message in messages %}
+                  <div class="flash-message">{{ message }}</div>
+              {% endfor %}
+          {% endif %}
+      {% endwith %}
+  </div>
+    <main class="container">
+        <div id="message-container">
+            <!-- Messages will be added here dynamically via JavaScript -->
+        </div>
+        <div class="button-container">
+            <form method="post" id="moderation-form">
+                <button type="submit" name="allow" class="button">Allow</button>
+                <button type="submit" name="deny" class="button">Deny</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <div id="no-messages">No messages for moderation</div>
+    </footer>
+    <script>
+        const socket = new WebSocket('ws://127.0.0.1:5000/queue'); // assuming you have initialized the socket connection
+
+// assuming you have a div with id "message-container"
+const messageContainer = document.getElementById("message-container");
+
+// assuming you have a Python list of messages called "messages"
+socket.onmessage = (event) => {
+  const moderation_queue = JSON.parse(event.data);
+  console.log("Received moderation_queue event with data: ", moderation_queue);
+  const noMessagesDiv = document.getElementById("no-messages");
+  if (moderation_queue.length === 0) {
+      noMessagesDiv.style.display = "block";
+      messageContainer.innerHTML = "";
+  } else {
+      noMessagesDiv.style.display = "none";
+      messageContainer.innerHTML = moderation_queue.map(message => `<div class="message">${message}</div>`).join("");
+  }
+};
+
+document.getElementById("moderation-form").addEventListener("submit", function(event){
+    event.preventDefault();
+  
+    let action = event.submitter.name;
+    fetch('/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: new URLSearchParams({
+        [action]: 'true'
+      })
+    }).then(response => {
+      console.log(response);
+    }).catch(error => {
+      console.error(error);
+    });
+});
+    </script></body>
+</html>

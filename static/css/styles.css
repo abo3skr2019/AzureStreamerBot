@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #232323; /* Dark gray background color */
+    color: #f1f1f1; /* Light gray text color for the default mode */
+}
+.flash-messages {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.flash-message {
+    padding: 10px;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.message {
+    background-color: #444; /* Dark gray background color */
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    color: #f1f1f1; /* Light gray text color for the default mode */
+}
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Add margin to separate the buttons from "Back to Index" */
+}
+.button {
+    background-color: #6441A4; /* Twitch purple for buttons */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin: 5px 10px; /* Added margin to create space between the buttons */
+}
+.button:hover {
+    background-color: #552c7f; /* Slightly darker purple on hover */
+}
+.no-message {
+    background-color: #444; /* Dark gray background color */
+    padding: 20px;
+    border: 1px solid #ccc;
+    color: #f1f1f1; /* Light gray text color for the default mode */
+}
+a {
+    text-decoration: none;
+    color: #6441A4; /* Twitch purple for links */
+}
