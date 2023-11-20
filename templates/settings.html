@@ -2,64 +2,66 @@
 <html lang="en">
 <head>
     <title>Settings Page</title>
-    <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
-
-    form {
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-      max-width: 500px;
-      width: 100%;
-    }
-
-    h2 {
-      text-align: center;
-      color: #333;
-    }
-
-    label {
-      display: block;
-      margin-top: 20px;
-    }
-
-    input[type="text"], input[type="range"], select {
-      width: 100%;
-      padding: 12px 20px;
-      margin: 8px 0;
-      box-sizing: border-box;
-      border-radius: 4px;
-      border: 1px solid #ddd;
-    }
-
-    input[type="submit"] {
-      background-color: #4CAF50;
-      color: white;
-      padding: 14px 20px;
-      margin: 8px 0;
-      border: none;
-      cursor: pointer;
-      width: 100%;
-      border-radius: 4px;
-      font-size: 16px;
-    }
-
-    input[type="submit"]:hover {
-      opacity: 0.8;
-    }
-    </style>
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          text-align: center;
+          background-color: #232323; /* Dark gray background color */
+          color: #f1f1f1; /* Light gray text color for the default mode */
+          align-items: center;
+          height: 100vh;
+          margin: 0;
+      }
+      
+      form {
+          background: #444; /* Dark gray background color */
+          padding: 20px;
+          border: 1px solid #ccc;
+          border-radius: 8px;
+          max-width: 500px;
+          width: 100%;
+      }
+      
+      h2 {
+          text-align: center;
+          color: #f1f1f1; /* Light gray text color for the default mode */
+      }
+      
+      label {
+          display: block;
+          margin-top: 20px;
+          color: #f1f1f1; /* Light gray text color for the default mode */
+      }
+      
+      input[type="text"], input[type="range"], select {
+          width: 100%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          box-sizing: border-box;
+          border-radius: 4px;
+          border: 1px solid #ddd;
+          background-color: #444; /* Dark gray background color */
+          color: #f1f1f1; /* Light gray text color for the default mode */
+      }
+      
+      input[type="submit"] {
+          background-color: #6441A4; /* Twitch purple for buttons */
+          color: #fff;
+          padding: 14px 20px;
+          margin: 8px 0;
+          border: none;
+          cursor: pointer;
+          width: 100%;
+          border-radius: 4px;
+          font-size: 16px;
+      }
+      
+      input[type="submit"]:hover {
+          background-color: #552c7f; /* Slightly darker purple on hover */
+      }
+      </style>
 </head>
-<body>
-
+  <body>
 <h2>Settings</h2>
 
 <form method="POST">
@@ -68,11 +70,24 @@
   <label for="voice">Voice:</label>
   <select id="voice" name="voice">
     <option value="en-US-DavisNeural">en-US-DavisNeural</option>
+    <option value="en-US-JennyNeural">en-US-JennyNeural</option>
+    <option value="en-US-ElizabethNeural">en-US-ElizabethNeural</option>
+    <option value="es-ES-ElviraNeural">es-ES-ElviraNeural</option>
+    <option value="es-ES-AlvaroNeural">es-ES-AlvaroNeural</option>
+    <option value="en-US-GuyNeural">en-US-GuyNeural</option>
+    <option value="en-US-BrandonNeural">en-US-BrandonNeural</option>
     <!-- Add more options as needed -->
   </select>
   <label for="role">Role:</label>
   <select id="role" name="role">
+    <option value="YoungAdultMale">YoungAdultMale</option>
+    <option value="YoungAdultFemale">YoungAdultFemale</option>
     <option value="OlderAdultMale">OlderAdultMale</option>
+    <option value="OlderAdultFemale">OlderAdultFemale</option>
+    <option value="SeniorMale">SeniorMale</option>
+    <option value="SeniorFemale">SeniorFemale</option>
+    <option value="Girl">Girl</option>
+    <option value="Boy">Boy</option>
     <!-- Add more options as needed -->
   </select>
   <input type="submit" value="Submit">
